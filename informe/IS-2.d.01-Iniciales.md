@@ -1,255 +1,196 @@
 # IS 2.d.02 (a) - Auditoría de Superficie de Exposición Post-Incidente (OSINT pasivo)
-<!-- AYUDA (BORRAR): Plantilla del informe. Rellenad los campos entre corchetes y eliminad todos los bloques "AYUDA (BORRAR)" antes de entregar. -->
 
 - Entidad objetivo: Clínica de San Rafael de Cádiz
-<!-- AYUDA (BORRAR): Nombre exacto del objetivo (como aparece en fuentes públicas). -->
-- Equipo/Grupo: [Nombre del grupo]
-<!-- AYUDA (BORRAR): Identificador del grupo/equipo. -->
-- Integrantes: [Nombre Apellido (Iniciales)], [..]
-<!-- AYUDA (BORRAR): Lista de integrantes (mismo orden que en la presentación). -->
-- Fecha(s) de investigación: [YYYY-MM-DD a YYYY-MM-DD]
-<!-- AYUDA (BORRAR): Rango de fechas reales en las que hicisteis las consultas OSINT. -->
-- Versión: 1.0
-<!-- AYUDA (BORRAR): Subid versión si hay revisiones (1.1, 1.2...). -->
-- Límite de entrega (a): máximo 6 folios (12 caras) en PDF (si aplica)
-<!-- AYUDA (BORRAR): Recordatorio del límite; podéis quitarlo si no os lo piden. -->
+- Equipo/Grupo: Grupo 4
+- Integrantes: Hugo, Jose, Maye, Juan
+- Fecha(s) de investigación: 2026-02-01
+- Versión: 1.1
 
 ## 1. Resumen ejecutivo
-<!-- AYUDA (BORRAR): 8-15 líneas. Debe entenderse sin leer el resto: qué se investigó, hallazgos top y acciones prioritarias. -->
 
-**Objetivo.** Determinar qué información pública existía (antes del incidente supuesto) que podría haber facilitado la fase de reconocimiento de un atacante: identidades digitales, contactos, dominios/subdominios, huella documental (metadatos), menciones públicas y exposiciones derivadas.
+**Objetivo.**
+El propósito principal de esta auditoría ha sido identificar qué información de la organización se encontraba expuesta públicamente antes del supuesto incidente. Nos hemos centrado en detectar datos que pudieran haber ayudado a un atacante en su fase de reconocimiento, tales como identidades de empleados, vías de contacto, infraestructura tecnológica visible y metadatos olvidados en documentos públicos.
 
-**Hallazgos clave (3-7 bullets).**
-<!-- AYUDA (BORRAR): Elegid solo lo más relevante (lo que facilita ingeniería social/reconocimiento). -->
-- [Hallazgo 1 + por qué importa]
-- [Hallazgo 2 + por qué importa]
-- [Hallazgo 3 + por qué importa]
+**Hallazgos clave.**
+Durante la investigación, hemos encontrado varios puntos de atención que merecen ser destacados:
+- **Exposición detallada del personal:** Hemos localizado un listado accesible que expone nombres y cargos de 438 empleados, incluyendo puestos clave como la Dirección Médica. Esto supone una "mina de oro" para ataques de ingeniería social.
+- **Servicios internos visibles:** Se han detectado subdominios que apuntan a servicios críticos, como el portal del empleado (`portalempleado.jmpascual.com`) y el correo web, expuestos directamente a Internet.
+- **Patrones de contacto claros:** La confirmación del formato de correo corporativo (`@jmpascual.com`) permite a un atacante inferir las direcciones de email de casi cualquier empleado identificado.
 
-**Riesgo global (una frase).**
-<!-- AYUDA (BORRAR): Un diagnóstico breve: nivel + causa principal. -->
-- [Bajo/Medio/Alto] por [motivo principal].
+**Riesgo global.**
+- **Alto.** La combinación de identidades con nombres y apellidos reales, junto con el acceso directo a portales de autenticación, crea un escenario ideal para un ataque dirigido con altas probabilidades de éxito.
 
-**Recomendaciones prioritarias (3-5 bullets).**
-<!-- AYUDA (BORRAR): Acciones concretas, medibles y alineadas con los hallazgos. -->
-- [Acción 1]
-- [Acción 2]
-- [Acción 3]
+**Recomendaciones prioritarias.**
+- Como medida urgente, recomendamos revisar la necesidad de tener el listado médico completo accesible de forma pública sin autenticación previa.
+- Es vital auditar los accesos remotos (como el portal del empleado) para garantizar que el doble factor de autenticación (2FA) esté activo y sea obligatorio.
+- Aconsejamos establecer una rutina de limpieza de metadatos para todos los documentos PDF antes de que sean subidos a la web corporativa.
 
 ## 2. Alcance, supuestos y reglas de compromiso
-<!-- AYUDA (BORRAR): Dejad claro QUÉ se ha hecho y QUÉ no (para demostrar OSINT pasivo). Indicad supuestos y límites. -->
 
-**Alcance.** Solo OSINT pasivo sobre la entidad (y su huella pública asociada). No se incluye investigación individual (apartado b).
+**Alcance.**
+Esta auditoría se ha limitado estrictamente a técnicas de OSINT pasivo sobre la entidad. Esto significa que no hemos interactuado con sus sistemas, sino que hemos analizado únicamente la huella que estos dejan en fuentes públicas.
 
-**Fuentes permitidas (ejemplos).** Motores de búsqueda, hemeroteca, registros públicos, perfiles públicos en RRSS, repositorios públicos, documentos públicos, Wayback/archivos, bases de datos de brechas (consulta pasiva).
-<!-- AYUDA (BORRAR): Listad las fuentes reales que usasteis (5-10), no un listado infinito. -->
+**Fuentes permitidas.**
+Para ello, nos hemos valido de motores de búsqueda, registros públicos de internet, redes sociales y el análisis de documentos que la propia organización ha hecho públicos.
 
-**Regla crítica.** Prohibida cualquier acción activa: escaneos, enumeración directa de servicios, pruebas de login, interacción con formularios, generación de tráfico hacia los sistemas objetivo.
-<!-- AYUDA (BORRAR): Si una herramienta pudiera considerarse “activa”, explicad cómo la usasteis de forma pasiva (solo consultas a datos ya recopilados por terceros). -->
+**Regla crítica.**
+En todo momento se ha respetado la prohibición de realizar acciones activas: no se han lanzado escaneos, no se ha intentado iniciar sesión en ningún portal y no se ha generado tráfico directo contra la infraestructura del objetivo.
 
 **Minimización y privacidad.**
-<!-- AYUDA (BORRAR): Explicad cómo reducís datos personales (enmascarado parcial, iniciales, no incluir PII innecesaria). -->
-- Evitar incluir datos personales innecesarios.
-- Si aparecen datos personales de terceros (p. ej., correos de empleados), aplicar reducción: mostrar solo lo imprescindible o enmascarar parcialmente cuando no aporte valor al riesgo.
+- Hemos tenido cuidado de no incluir datos personales sensibles en este informe más allá de lo necesario para demostrar el riesgo.
+- En los casos donde aparecen datos de terceros, los hemos tratado con la confidencialidad requerida.
 
 ## 3. Metodología (ciclo OSINT)
-<!-- AYUDA (BORRAR): Explicad el proceso seguido de forma reproducible (ciclo OSINT) y cómo volvisteis a fases anteriores si fue necesario. -->
 
-Esta sección describe el proceso seguido según el ciclo OSINT: planificación, fuentes, adquisición, procesamiento, análisis y difusión.
+A continuación, detallamos paso a paso el proceso que hemos seguido, basándonos en el ciclo de inteligencia OSINT estándar.
 
 ### 3.1 Planificación y dirección
-<!-- AYUDA (BORRAR): Objetivos, preguntas guía y criterios de priorización. Esto demuestra teoría + método. -->
 
-- Preguntas guía (ejemplos):
-  - ¿Qué dominios y marcas usa la entidad?
-  - ¿Existen patrones de email/usuarios visibles públicamente?
-  - ¿Existen documentos públicos con metadatos reveladores?
-  - ¿Hay menciones de tecnologías, proveedores, sedes, organigrama o personal?
-  - ¿La entidad aparece asociada a brechas pasadas o leaks públicos?
-<!-- AYUDA (BORRAR): Ajustad estas preguntas a lo que realmente investigasteis. -->
+Para guiar nuestra investigación, nos planteamos una serie de preguntas clave:
+  - ¿Qué huella digital dejan los empleados y la marca en Internet?
+  - ¿Es posible deducir cómo se forman los correos electrónicos corporativos?
+  - ¿Existen documentos antiguos que revelen información técnica a través de sus metadatos?
+  - ¿Hay infraestructura interna que, por error, esté indexada en buscadores?
 
-- Criterios de priorización:
-  - Impacto potencial en ingeniería social.
-  - Reutilización de credenciales/patrones.
-  - Exposición de infraestructura por huella documental/histórica.
-<!-- AYUDA (BORRAR): Indicad 2-4 criterios máximo y cómo los aplicasteis. -->
-
-- Ventana temporal:
-  - Consulta realizada en: [YYYY-MM-DD]
-  - Evidencias archivadas en: `evidencias/` (todas deben quedar enlazadas en el informe).
-<!-- AYUDA (BORRAR): Si usasteis Wayback, indicad el rango de años consultado. -->
+- **Ventana temporal:** La toma de datos se realizó el 01/02/2026. Todas las pruebas han sido archivadas en la carpeta de evidencias para su consulta.
 
 ### 3.2 Identificación de fuentes
-<!-- AYUDA (BORRAR): Fuentes por categoría. Mejor pocas y justificadas. Indicad cómo se mantiene el enfoque pasivo. -->
 
-Tabla de fuentes (añadir/quitar según aplique):
-<!-- AYUDA (BORRAR): En “Notas (pasivo)” indicad qué aporta la fuente y por qué no implica interacción con los sistemas objetivo. -->
+Seleccionamos las fuentes que nos aportarían mayor valor sin alertar al objetivo:
 
-| Categoría   | Fuente/Herramienta                  | Qué se busca                | Notas (pasivo)              |
+| Categoría   | Fuente/Herramienta                  | Qué buscamos                | Enfoque pasivo              |
 |-------------|-------------------------------------|-----------------------------|-----------------------------|
-| Buscadores  | Google / Bing / DuckDuckGo          | menciones, PDFs, indexación | dorks sin acceder a paneles |
-| Archivo web | Wayback Machine                     | versiones antiguas          | solo lectura                |
-| Dominios    | WHOIS/RDAP (consulta)               | datos de registro           | solo consulta pública       |
-| DNS pasivo  | dnsdumpster, securitytrails, etc.   | subdominios/histórico       | sin enumeración activa      |
-| Brechas     | HIBP / DeHashed (si se usa)         | apariciones en brechas      | no intentar logins          |
-| RRSS        | LinkedIn/X/Facebook (público)       | perfiles, roles, nicks      | solo contenido público      |
-| Metadatos   | exiftool/FOCA (sobre docs públicos) | autores, rutas, software    | sobre ficheros públicos     |
+| Buscadores  | Google                              | Menciones, archivos PDF     | Uso de Dorks (búsquedas avanzadas) |
+| Dominios    | WHOIS/RDAP                          | Propiedad de los dominios   | Consultas a bases de datos públicas |
+| RRSS        | LinkedIn/Instagram                  | Empleados y cultura corporativa | Revisión de perfiles públicos |
+| Documentos  | Web corporativa                     | Memorias y cuadros médicos  | Descarga directa de archivos públicos |
 
 ### 3.3 Adquisición (recopilación)
-<!-- AYUDA (BORRAR): Consultas representativas (no todas). Añadid palabras clave, variantes del nombre, ubicaciones, etc. -->
 
-- Consultas realizadas (resumen):
-  - [Query/dork 1]
-  - [Query/dork 2]
-  - [Query/dork 3]
+Comenzamos ejecutando búsquedas específicas, por ejemplo:
+  - Buscando todo lo relacionado con el dominio `hospitalespascual.com`.
+  - Localizando archivos PDF que contuvieran referencias al dominio de correo `@jmpascual.com`.
 
-- Evidencias:
-  - Guardar capturas o PDFs en `evidencias/` con nombres: `YYYY-MM-DD_fuente_tema.ext`
-  - Registrar URL (y, cuando sea útil, captura) y fecha de acceso en cada hallazgo.
-  - Toda evidencia mencionada en el informe debe estar enlazada (URL y/o ruta relativa a `evidencias/`).
-<!-- AYUDA (BORRAR): Si una URL cambia o desaparece, la captura/PDF en `evidencias/` es la prueba de trazabilidad. -->
+Toda la información relevante ha sido capturada y almacenada en el directorio `evidencias/` para garantizar la trazabilidad de nuestros hallazgos.
 
 ### 3.4 Procesamiento y organización
-<!-- AYUDA (BORRAR): Cómo ordenasteis datos: deduplicación, clasificación por categorías y relevancia, y control de calidad. -->
 
-- Normalización:
-  - Deduplicación de correos/teléfonos/dominios.
-  - Agrupación por categoría (contacto, identidad, infra, documentos).
-
-- Criterios de calidad:
-  - Fiabilidad de la fuente (primaria vs. terciaria).
-  - Fecha y vigencia (actual vs. histórico).
-  - Corroboración cruzada (>= 2 fuentes cuando sea posible).
-<!-- AYUDA (BORRAR): Indicad qué hallazgos NO pudisteis corroborar y por qué. -->
+Una vez obtenidos los datos, procedimos a organizarlos:
+  - Clasificamos la información en tres grandes bloques: Personas (Identidad), Medios de contacto y Tecnología.
+  - Procesamos los datos brutos para generar un listado limpio de personal médico (`doctors.json`).
 
 ### 3.5 Análisis e interpretación
-<!-- AYUDA (BORRAR): Transformad datos en “inteligencia”: vectores habilitados, probabilidad/impacto, y mitigación recomendada. -->
 
-- Correlaciones (ejemplos):
-  - Patrones de email + nombres de empleados + roles (posible spear phishing).
-  - Documentos públicos -> metadatos -> nombres de usuario/software.
-  - Dominios/subdominios históricos -> superficies olvidadas.
-<!-- AYUDA (BORRAR): Añadid 2-5 correlaciones reales. Mejor pocas y buenas. -->
+Al cruzar los datos, encontramos correlaciones interesantes:
+  - Al tener la lista de nombres (`doctors.json`) y conocer el formato de los correos (`@jmpascual.com`), un atacante podría generar una lista de emails válida con muy poco margen de error.
+  - La existencia pública de subdominios como `portalempleado` sugiere que existe una puerta de entrada para aquellos credenciales que pudieran ser robados mediante phishing.
 
-- Valoración de riesgo: usar una escala simple.
-  - Alto: facilita acceso/engaño de alta probabilidad o alto impacto.
-  - Medio: aporta información útil, pero requiere pasos adicionales.
-  - Bajo: información marginal o muy genérica.
-<!-- AYUDA (BORRAR): Justificad el riesgo con una frase (“Alto porque permite suplantación del canal X”, etc.). -->
+- **Valoración de riesgo:** Consideramos la situación de riesgo **Alto**, principalmente por la facilidad con la que se puede armar un ataque de ingeniería social muy creíble.
 
 ### 3.6 Difusión
-<!-- AYUDA (BORRAR): Explicad a quién va dirigido el informe y cómo se usará (priorizar mitigaciones y concienciación). -->
 
-- Este informe resume hallazgos, evidencia y recomendaciones accionables.
-- Presentación clara para audiencias técnicas y no técnicas.
+Este informe recoge todo lo analizado y presenta recomendaciones prácticas para mitigar los riesgos detectados.
 
 ## 4. Herramientas utilizadas
-<!-- AYUDA (BORRAR): Incluid solo herramientas realmente usadas y una evidencia por cada una (URL o fichero en `evidencias/`). -->
 
 | Herramienta   | Tipo                          | Uso concreto | Salida/evidencia               |
 |---------------|-------------------------------|--------------|--------------------------------|
-| [Herramienta] | [Buscador/DNS/Metadatos/etc.] | [Para qué]   | [archivo en evidencias/ o URL] |
+| Scripts OSINT | Recolección                   | Rastreo de dominios y emails | `evidencias/Enlaces.txt` |
+| Google Dorks  | Buscador                      | Localización de PDFs olvidados | `evidencias/Memorias-San-Rafael.pdf` |
+| Navegación    | Manual                        | Extracción del cuadro médico | `evidencias/doctors.json` |
 
 ## 5. Resultados (hallazgos)
-<!-- AYUDA (BORRAR): Parte principal. Cada hallazgo debe ser verificable y tener evidencia enlazada (URL y/o `evidencias/...`). -->
 
-Formato recomendado por hallazgo:
-<!-- AYUDA (BORRAR): Copiad esta tabla por cada hallazgo importante (o adaptadla si preferís una tabla global). -->
+### 5.1 Identidades digitales (nicks, perfiles, cuentas)
 
 | Campo           | Contenido                                                                  |
 |-----------------|----------------------------------------------------------------------------|
 | ID              | A-01                                                                       |
-| Categoría       | Contacto / Identidad / Dominio-DNS / Documentos-Metadatos / RRSS / Brechas |
-| Descripción     | [Qué se encontró, claro y verificable]                                     |
-| Evidencia       | [URL] + `evidencias/...`                                                   |
-| Fecha evidencia | [YYYY-MM-DD]                                                               |
-| Impacto         | [Qué permite a un atacante]                                                |
-| Riesgo          | Alto / Medio / Bajo                                                        |
-| Recomendación   | [Mitigación concreta]                                                      |
-
-### 5.1 Identidades digitales (nicks, perfiles, cuentas)
-<!-- AYUDA (BORRAR): Perfiles corporativos, posibles empleados/roles (solo info pública), y “pivots” para ingeniería social. -->
-
-- A-01
-- A-02
+| Categoría       | Identidad                                                                  |
+| Descripción     | Hemos podido descargar un listado completo con 438 registros de empleados. Detalla nombres completos y cargos específicos (ej. Director Médico, Jefes de Servicio), lo cual expone la jerarquía interna de la clínica. |
+| Evidencia       | [Cuadro Médico (JSON)](../evidencias/doctors.json)                         |
+| Fecha evidencia | 2026-02-01                                                                 |
+| Impacto         | Esta información facilita enormemente los ataques de "Whaling" (phishing a directivos) o "Spear Phishing", ya que el atacante puede dirigirse a la víctima por su nombre y cargo real, ganándose su confianza. |
+| Riesgo          | Alto                                                                       |
+| Recomendación   | Se debería evaluar si es estrictamente necesario que este listado sea indexable por buscadores. Una opción sería protegerlo tras un login o mostrar solo la información esencial para el paciente. |
 
 ### 5.2 Datos de contacto (emails, teléfonos, estructuras)
-<!-- AYUDA (BORRAR): Patrones de correo (si se infieren), teléfonos publicados, extensiones, formularios de contacto y riesgos asociados. -->
 
-- A-03
-- A-04
+| Campo           | Contenido                                                                  |
+|-----------------|----------------------------------------------------------------------------|
+| ID              | A-02                                                                       |
+| Categoría       | Contacto                                                                   |
+| Descripción     | Hemos identificado el patrón de construcción de correos corporativos: `@jmpascual.com`. También encontramos direcciones funcionales expuestas, como `cadiz.secretaria@jmpascual.com`. |
+| Evidencia       | [Enlaces Recopilados](../evidencias/Enlaces.txt)                           |
+| Fecha evidencia | 2026-02-01                                                                 |
+| Impacto         | Conocer el patrón de correo permite enviar malware o correos fraudulentos a toda la plantilla sin necesidad de conocer sus direcciones de antemano (fuerza bruta de usuarios). |
+| Riesgo          | Medio                                                                      |
+| Recomendación   | Es fundamental contar con filtros antispam robustos. Además, recomendamos sustituir las direcciones de correo publicadas en la web por formularios de contacto protegidos con Captcha. |
 
 ### 5.3 Dominios, subdominios y huella DNS (pasivo)
-<!-- AYUDA (BORRAR): Dominios oficiales/variantes y subdominios observados en fuentes pasivas/históricas. Evitad enumeración activa. -->
 
-- A-05
-- A-06
+| Campo           | Contenido                                                                  |
+|-----------------|----------------------------------------------------------------------------|
+| ID              | A-03                                                                       |
+| Categoría       | Dominio-DNS                                                                |
+| Descripción     | Detectamos subdominios que apuntan a servicios de gestión interna: `portalempleado`, `correo` (webmail), `pruebasdiagnosticas` y `ftp`. La IP asociada es `185.186.170.111`. |
+| Evidencia       | [Enlaces Recopilados](../evidencias/Enlaces.txt)                           |
+| Fecha evidencia | 2026-02-01                                                                 |
+| Impacto         | Exponer paneles de administración a Internet aumenta drásticamente la superficie de ataque. Si un atacante consigue credenciales, tiene una puerta directa para entrar. |
+| Riesgo          | Alto                                                                       |
+| Recomendación   | Lo ideal es que estos paneles estén accesibles solo vía VPN. Si deben ser públicos, es obligatorio implementar autenticación de múltiples factores (MFA). |
 
 ### 5.4 Huella documental y metadatos (documentos públicos)
-<!-- AYUDA (BORRAR): Documentos públicos y metadatos relevantes (autor, software, rutas, fechas). Adjuntad evidencia. -->
 
-- A-07
-- A-08
-
-### 5.5 Brechas y filtraciones (consulta pasiva)
-<!-- AYUDA (BORRAR): Aparición del dominio/correos en brechas conocidas. No incluyáis contraseñas. Priorizad mitigaciones (2FA, rotación, etc.). -->
-
-- A-09
+| Campo           | Contenido                                                                  |
+|-----------------|----------------------------------------------------------------------------|
+| ID              | A-04                                                                       |
+| Categoría       | Documentos-Metadatos                                                       |
+| Descripción     | Encontramos documentos corporativos indexados, como las "Memorias San Rafael". Estos archivos suelen contener metadatos técnicos (usuario que creó el archivo, software utilizado) que no han sido limpiados. |
+| Evidencia       | [Memorias San Rafael](../evidencias/Memorias-San-Rafael.pdf)               |
+| Fecha evidencia | 2026-02-01                                                                 |
+| Impacto         | Aunque parece menor, la fuga de metadatos puede revelar versiones de software vulnerables o nombres de usuario internos que ayudan a un atacante a planificar su intrusión. |
+| Riesgo          | Medio                                                                      |
+| Recomendación   | Implementar un proceso de "higienización" de documentos. Antes de publicar cualquier PDF, se deben borrar sus metadatos automáticamente. |
 
 ## 6. Resumen de riesgos
-<!-- AYUDA (BORRAR): Tabla para priorizar: qué arreglar primero (P1), después (P2) y al final (P3). -->
 
 | ID   | Hallazgo (resumen) | Riesgo | Prioridad | Acción recomendada |
 |------|--------------------|--------|-----------|--------------------|
-| A-01 | [..]               | Alto   | P1        | [..]               |
-| A-02 | [..]               | Medio  | P2        | [..]               |
-| A-03 | [..]               | Bajo   | P3        | [..]               |
+| A-01 | Exposición masiva de empleados | Alto   | P1        | Limitar exposición y concienciar |
+| A-02 | Emails y patrones expuestos | Medio  | P2        | Ocultar emails y filtrar spam |
+| A-03 | Paneles (portal empleado) expuestos | Alto   | P1        | MFA obligatorio y/o VPN |
+| A-04 | Documentos públicos históricos | Medio  | P3        | Limpieza de metadatos |
 
 ## 7. Conclusiones
-<!-- AYUDA (BORRAR): 3-6 bullets: qué superficie pública existía y qué vector pudo facilitar. Sin repetir texto, aportad síntesis. -->
 
-- [Conclusión 1: qué explica la exposición encontrada y por qué importa]
-- [Conclusión 2]
-- [Conclusión 3]
+Tras nuestro análisis, concluimos que:
+- La organización presenta una **exposición crítica de su personal**. Al tener nombres, cargos y posibles emails accesibles, son un blanco fácil (y atractivo) para ciberdelincuentes.
+- La infraestructura crítica, como el **portal del empleado y el correo web**, está "a tiro de piedra" desde Internet. Si no están fuertemente protegidos (MFA), suponen un riesgo inaceptable.
+- En resumen, con la información recopilada en unas pocas horas, un atacante motivado tendría todo lo necesario para lanzar una campaña de **Phishing** muy efectiva.
 
 ## 8. Recomendaciones
-<!-- AYUDA (BORRAR): Convertid hallazgos en acciones concretas. Si podéis, asignad responsable sugerido (IT/Seguridad/RRHH/Comunicacion). -->
 
-**Quick wins (0-30 días)**
-<!-- AYUDA (BORRAR): Cambios rápidos: retirar/editar documentos, sanear metadatos, ajustar contenidos públicos, concienciación inmediata. -->
-- [..]
-- [..]
+Para mitigar estos riesgos, sugerimos el siguiente plan de acción:
+
+**Victorias rápidas (0-30 días)**
+- Retirar o proteger bajo contraseña los listados detallados del personal médico (JSON).
+- Revisar urgentemente que el `portalempleado` y el acceso al correo requieran un segundo factor de autenticación.
+- Solicitar a Google la desindexación de documentos antiguos que ya no deberían ser públicos.
 
 **Medio plazo (1-3 meses)**
-<!-- AYUDA (BORRAR): Cambios estructurales: políticas de publicación, revisión periódica, procesos, formación, controles de identidad. -->
-- [..]
+- Establecer una política automática que limpie los metadatos de cualquier documento antes de hacerlo público.
+- Realizar formaciones de concienciación sobre ingeniería social, especialmente para el personal directivo identificado.
 
 **Mejora continua**
-<!-- AYUDA (BORRAR): Medidas recurrentes: monitorización de menciones, revisiones trimestrales de exposición, playbook OSINT. -->
-- [..]
+- Mantener una vigilancia activa sobre qué se publica de la marca en Internet y revisar periódicamente los subdominios activos.
 
 ## 9. Anexos
-<!-- AYUDA (BORRAR): Trazabilidad. Esta sección facilita la corrección: fuentes, consultas y evidencias enlazadas. -->
 
-### 9.1 Registro de fuentes
-<!-- AYUDA (BORRAR): Fuentes base consultadas (URL + fecha). No hace falta duplicar cada evidencia si ya está en hallazgos, pero sí lo principal. -->
+### 9.1 Evidencias (índice)
 
-| Fuente   | URL  | Fecha acceso | Nota |
-|----------|------|--------------|------|
-| [Fuente] | [..] | [YYYY-MM-DD] | [..] |
-
-### 9.2 Consultas (dorks) empleadas
-<!-- AYUDA (BORRAR): Dejad 5-15 consultas representativas. Deben ser pasivas y reproducibles. -->
-
-(Registrar aquí las consultas utilizadas. Evitar incluir acciones activas o instrucciones de acceso.)
-
-- `site:[dominio] filetype:pdf [palabra clave]`
-- `site:[dominio] "@[dominio]"`
-- `"Clínica San Rafael" "Cádiz" [palabra clave]`
-
-### 9.3 Evidencias (índice)
-<!-- AYUDA (BORRAR): Índice con enlaces relativos a ficheros dentro de `evidencias/`. Debe permitir abrir cada evidencia sin buscar. -->
-
-<!-- AYUDA (BORRAR): Ejemplo de enlace: `[2026-01-27 - Google - PDF organigrama](../evidencias/2026-01-27_google_organigrama.pdf)` -->
-
+A continuación enlazamos los ficheros utilizados como prueba:
 - `evidencias/`:
-  - `YYYY-MM-DD_fuente_tema.ext` - [descripción]
+  - `doctors.json`: El archivo que contiene el listado completo del personal.
+  - `Enlaces.txt`: El resultado de nuestras herramientas de recolección de dominios.
+  - `Memorias-San-Rafael.pdf`: Ejemplo de documento corporativo público analizado.

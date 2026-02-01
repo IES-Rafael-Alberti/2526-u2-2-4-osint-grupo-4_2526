@@ -1,0 +1,438 @@
+[
+  {
+    "position": "Director Médico",
+    "name": "Ignacio Ortiz Acero"
+  },
+  {
+    "position": "Servicio de Traumatología",
+    "name": "Agustín García Mancilla"
+  },
+  {
+    "position": "Directora de Enfermería",
+    "name": "Eva Reyes Pérez"
+  },
+  {
+    "position": "Servicio de Anatomía Patológica",
+    "name": "Eugenia Alonso Alejandro"
+  },
+  {
+    "position": "Servicio de Medicina General",
+    "name": "Erick Esteban Esteban Pedreros"
+  },
+  {
+    "position": "Servicio de Medicina General",
+    "name": "Viviana González Gómez"
+  },
+  {
+    "position": "Servicio de Neurología",
+    "name": "Ana de Lacour Juliá"
+  },
+  {
+    "position": "Servicio de Urología",
+    "name": "Ana Paula Urbina Portela"
+  },
+  {
+    "position": "Servicio de Oftalmología",
+    "name": "Antonio Garrido Marquez"
+  },
+  {
+    "position": "Servicio de Oncología Radioterápica",
+    "name": "Antonio Linares Moreno"
+  },
+  {
+    "position": "Servicio de Medicina Interna",
+    "name": "Beatriz López Alonso"
+  },
+  {
+    "position": "Servicio de Urgencias",
+    "name": "Begoña Zapata García"
+  },
+  {
+    "position": "Servicio de Neumología",
+    "name": "Belén Rojano Broz"
+  },
+  {
+    "position": "Doctora de Medicina Interna",
+    "name": "María Carmen Baquero Pérez"
+  },
+  {
+    "position": "Servicio de Traumatología",
+    "name": "Daniel Godoy Monzón"
+  },
+  {
+    "position": "Servicio de Cirugía",
+    "name": "Daniela Valeria Nerach Peña"
+  },
+  {
+    "position": "Servicio de Medicina Intensiva",
+    "name": "Adolfo Bolea Lafont"
+  },
+  {
+    "position": "Servicio de Oftalmología",
+    "name": "Dayana Sarahi Jiménez Fernández"
+  },
+  {
+    "position": "Servicio de Radiología",
+    "name": "Inmaculada Escobar Díaz"
+  },
+  {
+    "position": "Servicio de Urgencias",
+    "name": "Diego Alfredo Ruiz Garzón"
+  },
+  {
+    "position": "Servicio de Análisis Clínicos y Laboratorio",
+    "name": "Inmaculada Meni Solano"
+  },
+  {
+    "position": "Servicio de Anatomía Patológica",
+    "name": "Eduardo León Lezcano"
+  },
+  {
+    "position": "Servicio de Anestesia",
+    "name": "Francisco Javier Piury Alonso"
+  },
+  {
+    "position": "Servicio de Medicina General",
+    "name": "Julio Linera Cortés"
+  },
+  {
+    "position": "Servicio de Ginecología y Obstetricia",
+    "name": "Jorge Muñoz Cabrera"
+  },
+  {
+    "position": "Servicio de Anatomía Patológica",
+    "name": "José Luis Lérida Vaca"
+  },
+  {
+    "position": "Servicio de Urología",
+    "name": "Germán Atilio Spinetti Davila"
+  },
+  {
+    "position": "Servicio de Traumatología",
+    "name": "José Manuel Pascual Espinosa"
+  },
+  {
+    "position": "Servicio de Digestivo",
+    "name": "Luis Carretero Cala"
+  },
+  {
+    "position": "Servicio de Anatomía Patológica",
+    "name": "Luis Jesús Romero Gutiérrez"
+  },
+  {
+    "position": "Servicio de Medicina Interna",
+    "name": "Manuel Flores Chacartegui"
+  },
+  {
+    "position": "Servicio de Cardiología",
+    "name": "Manuel Jesús Oneto Otero"
+  },
+  {
+    "position": "Servicio de Microbiología",
+    "name": "Maria Jesús López Tinoco"
+  },
+  {
+    "position": "Servicio de Ginecología",
+    "name": "Camila Raduan Tozzini"
+  },
+  {
+    "position": "Servicio de Medicina del Trabajo",
+    "name": "Rafael Tomás Quintanilla Martínez"
+  },
+  {
+    "position": "Servicio de Medicina Intensiva",
+    "name": "William Padilla"
+  },
+  {
+    "position": "Servicio de Dermatología",
+    "name": "Luisa Lourdes Marcano de Acosta"
+  },
+  {
+    "position": "Servicio de Anestesiología y Reanimación",
+    "name": "Luis Alberto Budinich Cortada"
+  },
+  {
+    "position": "Servicio de Anestesiología y Reanimación",
+    "name": "Jesús Miguel Santana Carrera"
+  },
+  {
+    "position": "Servicio de Anestesiología y Reanimación",
+    "name": "Francisco José Vinuesa Núñez"
+  },
+  {
+    "position": "Servicio de Anestesiología y Reanimación",
+    "name": "María Elena Bravo Capaz"
+  },
+  {
+    "position": "Servicio de Anestesiología y Reanimación",
+    "name": "María del Carmen Ávila Mayolin"
+  },
+  {
+    "position": "Servicio de Anestesiología y Reanimación",
+    "name": "Leslie Carolina Salazar Balcárcel"
+  },
+  {
+    "position": "Servicio de Anestesiología y Reanimación",
+    "name": "Enrique Martínez Fernández"
+  },
+  {
+    "position": "Servicio de Cardiología",
+    "name": "Miguel Alba Sánchez"
+  },
+  {
+    "position": "Servicio de Cirugía General y el Aparato Digestivo",
+    "name": "Luis Mora Gutierrez"
+  },
+  {
+    "position": "Servicio de Radiología",
+    "name": "Orlando Ramses Fernández Diez"
+  },
+  {
+    "position": "Servicio del Aparato Digestivo",
+    "name": "Catalina Kindgard"
+  },
+  {
+    "position": "Servicio de Medicina Interna",
+    "name": "Verónica Manzano Roman"
+  },
+  {
+    "position": "Servicio de Pediatría",
+    "name": "Manuel Casanova Roman"
+  },
+  {
+    "position": "Servicio de Pediatría",
+    "name": "Ysmelia García Díaz"
+  },
+  {
+    "position": "Servicio de Pediatría",
+    "name": "Elizabeth Zoraya Mikelson La Cruz"
+  },
+  {
+    "position": "Servicio de Urgencias",
+    "name": "José Maria González Sánchez"
+  },
+  {
+    "position": "Servicio de Urgencias",
+    "name": "Dermeval Alex Azeñas Vega"
+  },
+  {
+    "position": "Servicio de Urgencias",
+    "name": "Jose Luis Collao Lemus"
+  },
+  {
+    "position": "Servicio de Endocrino",
+    "name": "Jose Juan Vallo de Castro"
+  },
+  {
+    "position": "Servicio de Ginecología y Obstetricia",
+    "name": "Francisco Javier Gómez Morillo"
+  },
+  {
+    "position": "Servicio de Cirugía Ortopédica y Traumatología",
+    "name": "Yolanda Barón Pérez"
+  },
+  {
+    "position": "Unidad de Columna",
+    "name": "Tomás Vela Panes"
+  },
+  {
+    "position": "Servicio de Neurocirugía",
+    "name": "Francisco Rodríguez Peña"
+  },
+  {
+    "position": "Unidad de Columna",
+    "name": "Gaspar García Guerrero"
+  },
+  {
+    "position": "Unidad de Columna",
+    "name": "Claudio Cano Gómez"
+  },
+  {
+    "position": "Podología",
+    "name": "Zulika Riveros"
+  },
+  {
+    "position": "Servicio de Medicina Estética",
+    "name": "Ana Olivares Ruiz"
+  },
+  {
+    "position": "Servicio de Cirugía Plástica",
+    "name": "Maria Jesús Martínez"
+  },
+  {
+    "position": "Servicio de Psicología",
+    "name": "María Súnico Rodríguez"
+  },
+  {
+    "position": "Servicio del Tratamiento del Dolor",
+    "name": "Francisco Gómez Armenta"
+  },
+  {
+    "position": "Servicio de Psicología",
+    "name": "Lourdes Toscano Aragón"
+  },
+  {
+    "position": "Servicio de Psicología",
+    "name": "Sandra Brenes Reyes"
+  },
+  {
+    "position": "Servicio de Psiquiatría",
+    "name": "Manuel Martínez Delgado"
+  },
+  {
+    "position": "Servicio de Urología",
+    "name": "Juan Manuel Fariñas Varo"
+  },
+  {
+    "position": "Servicio de Nefrología",
+    "name": "Carmen Minguez Mañanez"
+  },
+  {
+    "position": "Servicio de Ginecología y Obstetricia",
+    "name": "Cristina Mesa Páez"
+  },
+  {
+    "position": "Servicio de Ginecología y Obstetricia",
+    "name": "Julio Sancho Vázquez"
+  },
+  {
+    "position": "Cirugía General y del Aparato Digestivo",
+    "name": "Enrique Delfín Martínez de Salazar"
+  },
+  {
+    "position": "Servicio del Tratamiento del Dolor",
+    "name": "Jose de la Cueva Aguilera"
+  },
+  {
+    "position": "Servicio de Medicina Interna",
+    "name": "Pablo Gómez Contreras"
+  },
+  {
+    "position": "Servicio de Digestivo",
+    "name": "Lucas Diego Bermúdez"
+  },
+  {
+    "position": "Servicio de Digestivo",
+    "name": "Javier Pérez Jiménez"
+  },
+  {
+    "position": "Directora de Administración",
+    "name": "Irene Moya García"
+  },
+  {
+    "position": "Servicio de Medicina Interna",
+    "name": "Jorge Ortega García"
+  },
+  {
+    "position": "Servicio de Anatomía Patológica",
+    "name": "Viviana González Gómez"
+  },
+  {
+    "position": "Servicio de Anestesiología y Reanimación",
+    "name": "María Isabel Espigares Lopez"
+  },
+  {
+    "position": "Servicio de Ginecología y Obstetricia",
+    "name": "Celina Lavezzari"
+  },
+  {
+    "position": "Servicio de Traumatología",
+    "name": "Jose Manuel García Ruiz"
+  },
+  {
+    "position": "Servicio de Traumatología",
+    "name": "Guido Weisman"
+  },
+  {
+    "position": "Servicio de cuidados intensivos",
+    "name": "Mauro Enmanuel Pérezlindo"
+  },
+  {
+    "position": "Servicio de Urgencias",
+    "name": "Sara López Santos"
+  },
+  {
+    "position": "Servicio de Urgencias",
+    "name": "Juan Carlos Letrán Merino"
+  },
+  {
+    "position": "Servicio de Cirugía general y el Aparato Digestivo",
+    "name": "Jose Luis Arroyo Velez"
+  },
+  {
+    "position": "Servicio de Pediatría",
+    "name": "Manuel Casanova Ramón"
+  },
+  {
+    "position": "Servicio de Medicina Interna",
+    "name": "María Esther Sánchez"
+  },
+  {
+    "position": "Obstetricia y Ginecología",
+    "name": "Francisco Brenes Martín"
+  },
+  {
+    "position": "Obstetricia y Ginecología",
+    "name": "Carmen Aisha Butrón Hinojo"
+  },
+  {
+    "position": "Laboratorio",
+    "name": "Francisco José Cañas Hormigo"
+  },
+  {
+    "position": "Anestesia",
+    "name": "Francisco Santiago Castaño García"
+  },
+  {
+    "position": "Medicina Interna",
+    "name": "Ricardo de los ríos de la Peña"
+  },
+  {
+    "position": "Cirugía General",
+    "name": "Florian Kwon Chul Esch"
+  },
+  {
+    "position": "Oftalmología",
+    "name": "Paula Fernández Álvarez"
+  },
+  {
+    "position": "Urología",
+    "name": "Emilia Hails"
+  },
+  {
+    "position": "UCI/UCE",
+    "name": "Mery Helen Junco Cubillos"
+  },
+  {
+    "position": "Medicina Interna",
+    "name": "María Pascual Espinosa"
+  },
+  {
+    "position": "Cirugía General",
+    "name": "Pablo Pascual Espinosa"
+  },
+  {
+    "position": "Medicina Interna",
+    "name": "María Josefa Pascual Pérez"
+  },
+  {
+    "position": "Urgencias",
+    "name": "Salvador Pascual Rozas"
+  },
+  {
+    "position": "Medicina Interna",
+    "name": "María Ester Sánchez Rodríguez"
+  },
+  {
+    "position": "Pediatría",
+    "name": "Fabio Suárez Valderrama"
+  },
+  {
+    "position": "Hematología",
+    "name": "Julio Rafael Toscano Gómez"
+  },
+  {
+    "position": "Urgencias",
+    "name": "Carlos Fernando Zorro Zambrano"
+  }
+]
